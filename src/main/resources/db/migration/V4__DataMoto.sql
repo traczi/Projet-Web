@@ -1,0 +1,3 @@
+insert into motos(marquemoto,modelmoto, anneemoto, prixmoto, imagemoto)  values ('Ford','Fiesta',2015, 7500, 'https://static.moniteurautomobile.be/imgcontrol/images_tmp/clients/moniteur/c680-d465/content/medias/images/cars/ford/fiesta/ford--fiesta-3p--2015/ford--fiesta-3p--2015-m-2.jpg' );
+insert into motos(marquemoto,modelmoto, anneemoto, prixmoto, imagemoto)  values ('Opel','Astra',2012, 5000, 'https://upload.wikimedia.org/wikipedia/commons/0/08/Opel_Astra_Design_Edition_%28J%29_%E2%80%93_Frontansicht_%281%29%2C_14._August_2011%2C_Heiligenhaus.jpg' );
+insert into motos(marquemoto,modelmoto, anneemoto, prixmoto, imagemoto)  values ('Volkswagen','Golf 7',2017, 12500, 'https://sf2.auto-moto.com/wp-content/uploads/sites/9/2016/11/volkswagen-golf-7-restylee-11.jpg' );
