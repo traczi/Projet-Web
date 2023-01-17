@@ -78,4 +78,8 @@ public class CarController {
 
         return new RedirectView("/carList");
     }
+    @GetMapping("/viewById")
+    public String viewById(@ModelAttribute("carList") Car car){
+        return "viewById";
+    }
 }

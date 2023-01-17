@@ -60,6 +60,15 @@
                                     <input type="hidden" name="image" th:value="${car.getImage}">
                                     <td><button th:if="${isAdmin}" type="submit" class="btn btn-primary m-4">modifier</button></td>
                                 </form>
+                                <form th:action="@{/viewById}">
+                                    <input type="hidden" name="id" th:value="${car.getId}">
+                                    <input type="hidden" name="marque" th:value="${car.getMarque}">
+                                    <input type="hidden" name="model" th:value="${car.getModel}">
+                                    <input type="hidden" name="annee" th:value="${car.getAnnee}">
+                                    <input type="hidden" name="prix" th:value="${car.getPrix}">
+                                    <input type="hidden" name="image" th:value="${car.getImage}">
+                                    <td><button th:unless="${isAdmin}" type="submit" class="btn btn-primary m-4 d-flex justify-content-center">View</button></td>
+                                </form>
                             </div>
                         </div>
                     </div>
