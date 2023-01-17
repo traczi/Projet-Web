@@ -30,6 +30,15 @@ public class CarController {
     @Setter
     private List<Car> carsList;
 
+
+    @GetMapping("/")
+    public String accueil(Model model, @AuthenticationPrincipal OidcUser principal){
+        if (principal!=null){
+            model.addAttribute("isAdmin",getAdmins().contains(principal.getClaims().get("email")));
+        }
+        return "accueil";
+    }
+
     @GetMapping("/carList")
     public String getCarList(Model model, @AuthenticationPrincipal OidcUser principal){
         setCarsList(getCarPortIn().getCarList());
