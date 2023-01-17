@@ -63,4 +63,19 @@ public class CarController {
         carPortIn.deleteCar(car.getId());
         return new RedirectView("/carList");
     }
+    //Affichage pour modifier les voitures
+
+    @GetMapping("/updateCar")
+    public String updateCar(@ModelAttribute("carList") Car car){
+        return "updateCarView";
+    }
+    //Méthode pour modifier une voiture
+    @PostMapping("/updateCarForm")
+    @ResponseBody
+    public RedirectView updateCarView(@ModelAttribute("updateCar") Car car){
+        Car car1 = new Car(car.getId(),car.getMarque(),car.getModel(),car.getAnnee(), car.getPrix(), car.getImage());
+        carPortIn.updateCar(car1);
+
+        return new RedirectView("/carList");
+    }
 }
