@@ -16,6 +16,20 @@ public class CarListUseCase implements CarPortIn {
     public List<Car> getCarList(){
         return getCarPortOut().getCarList();
     }
+    @Override
+    public void addCar(Car car) {
+
+        List<Car> cars = carPortOut.getCarList();
+        boolean bool = true;
+        for(Car pr : cars){
+            if(pr.getId().equals(car.getId())){
+                bool=false;
+            }
+        }
+        if(bool){
+            carPortOut.addCar(car);
+        }
+    }
 
     @Override
     public Car selectedId(Long id) {

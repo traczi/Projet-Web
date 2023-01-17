@@ -10,6 +10,10 @@ import org.springframework.stereotype.Controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,5 +44,18 @@ public class CarController {
         }
         model.addAttribute("cars",getCarsList());
         return "carList";
+    }
+
+    @GetMapping("/addCar")
+    public String addCar(){
+        return "addCar";
+    }
+
+    @PostMapping("/addCarForm")
+    @ResponseBody
+    public RedirectView addView(@ModelAttribute("addCar") Car car) throws Exception{
+        Car car1 = new Car(Long.parseLong(car.getId().toString()),car.getMarque(),car.getModel(),car.getAnnee(), car.getPrix(), car.getImage());
+        carPortIn.addCar(car1);
+        return new RedirectView("/carList");
     }
 }

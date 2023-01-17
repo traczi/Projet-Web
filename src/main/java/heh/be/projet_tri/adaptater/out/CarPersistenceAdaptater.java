@@ -20,6 +20,11 @@ public class CarPersistenceAdaptater implements CarPortOut {
     }
 
     @Override
+    public void addCar(Car car) {
+        carRepository.save(carMapper.CarMapDomainToJpa(car));
+    }
+
+    @Override
     public Car selectedId(Long id) {
         CarJpaEntity carJpaEntity= carRepository.findById(id).get();
         if(carJpaEntity.equals(null)){
