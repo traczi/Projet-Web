@@ -33,4 +33,8 @@ public class CarPersistenceAdaptater implements CarPortOut {
             return carMapper.CarMapJpaToDomain(carJpaEntity);
         }
     }
+    @Override
+    public void deleteCar(Long id){
+        carRepository.deleteById(id);
+    }
 }
