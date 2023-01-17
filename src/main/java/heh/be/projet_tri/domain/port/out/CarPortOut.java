@@ -9,4 +9,5 @@ public interface CarPortOut {
     public Car selectedId(Long id);
     public void addCar(Car car);
     public void deleteCar(Long id);
+    public void updateCar(Car car);
 }

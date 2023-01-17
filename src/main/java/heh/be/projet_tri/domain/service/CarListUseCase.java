@@ -30,6 +30,12 @@ public class CarListUseCase implements CarPortIn {
             carPortOut.addCar(car);
         }
     }
+    //Méthode pour modifier une voiture
+
+    @Override
+    public void updateCar(Car car){
+        carPortOut.updateCar(car);
+    }
 
     @Override
     public void deleteCar(Long id){
