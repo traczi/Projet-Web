@@ -32,6 +32,11 @@ public class CarListUseCase implements CarPortIn {
     }
 
     @Override
+    public void deleteCar(Long id){
+        carPortOut.deleteCar(id);
+    }
+
+    @Override
     public Car selectedId(Long id) {
         return carPortOut.selectedId(id);
     }

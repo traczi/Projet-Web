@@ -58,4 +58,9 @@ public class CarController {
         carPortIn.addCar(car1);
         return new RedirectView("/carList");
     }
+    @PostMapping("/deleteCarForm")
+    public RedirectView deleteCar(@ModelAttribute("carList") Car car){
+        carPortIn.deleteCar(car.getId());
+        return new RedirectView("/carList");
+    }
 }
