@@ -38,20 +38,20 @@
 <main class="d-flex justify-content-center mt-5">
   <div class="card mb-3 " style="max-width: 540px;">
     <div class="row g-0 flex-nowrap ">
-      <div th:with="url=${param.image[0]}" class="col-md-4 w-100 align-self-center">
-        <img th:src="@{${url}}" class="img-fluid rounded-start h-auto">
+      <div th:with="urlMoto=${param.imageMoto[0]}" class="col-md-4 w-100 align-self-center">
+        <img th:src="@{${urlMoto}}" class="img-fluid rounded-start h-auto">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <input type="hidden" name="id" th:value="${param.id[0]}">
+          <input type="hidden" name="idMoto" th:value="${param.idMoto[0]}">
           <p class="text-center fw-bold">Marque de la voiture : </p>
-          <p class="card-text text-center" th:text="${param.marque[0]}"></p>
+          <p class="card-text text-center" th:text="${param.marqueMoto[0]}"></p>
           <p class="text-center fw-bold">Modèle de la voiture :</p>
-          <p class="card-text text-center" th:text="${param.model[0]}"></p>
+          <p class="card-text text-center" th:text="${param.modelMoto[0]}"></p>
           <p class="text-center fw-bold">Année de la voiture :</p>
-          <p class="card-text text-center" th:text="${param.annee[0]}"></p>
+          <p class="card-text text-center" th:text="${param.anneeMoto[0]}"></p>
           <p class="text-center fw-bold">Prix de la voiture :</p>
-          <p class="card-text text-center" th:text="${param.prix[0]} + ' €'"></p>
+          <p class="card-text text-center" th:text="${param.prixMoto[0]} + ' €'"></p>
         </div>
       </div>
     </div>
